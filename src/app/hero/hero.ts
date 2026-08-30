@@ -26,7 +26,7 @@ export class Hero {
   readonly navItems: NavItem[] = [
     { name: 'ABO', href: '#about' },
     { name: 'PROJECTS', href: '#projects' },
-    { name: 'SKILLS', href: 'skills' },
+    { name: 'SKILLS', href: '#skills' },
     { name: 'EXPERIENCE', href: 'experience' },
     { name: 'CONTACT', href: 'contact' },
   ];

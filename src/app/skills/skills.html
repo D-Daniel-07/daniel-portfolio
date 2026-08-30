@@ -1,0 +1,100 @@
+<section id="skills" class="skills-section">
+  <!-- ==========================================
+       AMBIENT GLOWS
+  =========================================== -->
+
+  <div class="ambient-glow glow-left"></div>
+
+  <div class="ambient-glow glow-right"></div>
+
+  <div class="skills-container">
+    <!-- ==========================================
+         EYEBROW HEADER
+    =========================================== -->
+
+    <div #animatedElement class="eyebrow animate-eyebrow">
+      <span> 03 / TECH MATRIX </span>
+
+      <div class="eyebrow-line"></div>
+    </div>
+
+    <!-- ==========================================
+         SECTION HEADER
+    =========================================== -->
+
+    <div #animatedElement class="section-header animate-header">
+      <h2>
+        <span class="heading-white"> ARCHITECTURAL MASTERY. </span>
+
+        <span class="heading-gold"> PRECISION APPLIED. </span>
+      </h2>
+    </div>
+
+    <!-- ==========================================
+         BENTO GRID
+    =========================================== -->
+
+    <div class="bento-grid">
+      @for (block of bentoCategories; track block.title; let index = $index) {
+        <article
+          #animatedElement
+          class="skill-card animate-card"
+          [class]="block.colSpan"
+          [style.animation-delay]="index * 140 + 100 + 'ms'"
+        >
+          <!-- Top Highlight -->
+
+          <div class="top-highlight"></div>
+
+          <!-- Corner Pins -->
+
+          <div class="corner corner-top-left"></div>
+
+          <div class="corner corner-bottom-right"></div>
+
+          <!-- =====================================
+               CARD HEADER
+          ====================================== -->
+
+          <div class="card-meta">
+            <span class="badge">
+              {{ block.badge }}
+            </span>
+
+            <span class="stat">
+              {{ block.stat }}
+            </span>
+          </div>
+
+          <!-- =====================================
+               TITLE
+          ====================================== -->
+
+          <h3>
+            {{ block.title }}
+          </h3>
+
+          <!-- =====================================
+               DESCRIPTION
+          ====================================== -->
+
+          <p class="description">
+            {{ block.description }}
+          </p>
+
+          <!-- =====================================
+               TECH CHIPS
+          ====================================== -->
+
+          <div class="tech-list">
+            @for (tech of block.items; track tech) {
+              <span class="tech-chip">
+                {{ tech }}
+              </span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
