@@ -4,10 +4,14 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadComponent: () => import('./hero/hero').then((m) => m.Hero),
+    loadComponent: () => import('./home/home').then((m) => m.Home),
   },
   {
     path: 'about',
-    loadComponent: () => import('./about/about').then((m) => m.About),
+    loadComponent: () => import('./home/home').then((m) => m.Home),
+  },
+  {
+    path: 'projects',
+    loadComponent: () => import('./home/home').then((m) => m.Home),
   },
 ];

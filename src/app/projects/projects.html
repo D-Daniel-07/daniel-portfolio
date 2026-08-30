@@ -1,0 +1,112 @@
+<section id="projects" class="projects-section">
+  <div class="projects-container">
+    <div class="eyebrow">
+      <span>02 / FEATURED WORK</span>
+      <div class="eyebrow-line"></div>
+    </div>
+
+    <div class="section-heading">
+      <h2>
+        <span class="heading-white"> SELECTED WORKS. </span>
+
+        <span class="heading-gold"> ENGINEERED VALUE. </span>
+      </h2>
+
+      <p>
+        Scroll down to unfold the system architecture cards. Each platform was built to solve
+        complex operational challenges.
+      </p>
+    </div>
+
+    <!-- ===============================
+         SCROLL STACK
+    ================================ -->
+
+    <app-scroll-stack
+      [itemDistance]="80"
+      [itemScale]="0.03"
+      [itemStackDistance]="32"
+      stackPosition="15%"
+      scaleEndPosition="8%"
+      [baseScale]="0.88"
+      [rotationAmount]="0"
+      [blurAmount]="0"
+      [useWindowScroll]="true"
+    >
+      @for (project of projects; track project.title) {
+        <div class="scroll-stack-card">
+          <div class="top-flare"></div>
+
+          <div class="corner tl"></div>
+          <div class="corner tr"></div>
+          <div class="corner bl"></div>
+          <div class="corner br"></div>
+
+          <span class="watermark-number">
+            {{ project.number }}
+          </span>
+
+          <div class="project-grid">
+            <div class="project-main">
+              <div>
+                <div class="project-meta">
+                  <span class="project-number"> {{ project.number }} // </span>
+
+                  <span class="project-category">
+                    {{ project.category }}
+                  </span>
+                </div>
+
+                <h3>
+                  {{ project.title }}
+                </h3>
+
+                <p class="project-description">
+                  {{ project.description }}
+                </p>
+              </div>
+
+              <div class="tech-list">
+                @for (tech of project.tech; track tech) {
+                  <span class="tech-pill">
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="project-side">
+              <div>
+                <span class="architecture-title"> // ARCHITECTURE METRICS </span>
+
+                <div class="metrics">
+                  @for (metric of project.metrics; track metric.label) {
+                    <div class="metric-row">
+                      <span class="metric-label">
+                        {{ metric.label }}
+                      </span>
+
+                      <span class="metric-value">
+                        {{ metric.value }}
+                      </span>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              <a
+                class="github-button"
+                [href]="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>VIEW ON GITHUB</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </app-scroll-stack>
+  </div>
+</section>

@@ -51,8 +51,9 @@
       <nav class="nav-links">
         @for (item of navItems; track item.name) {
           <a
-            [routerLink]="item.href"
+            [href]="item.href"
             class="nav-link"
+            (click)="handleNavClick(item, $event)"
             (mouseenter)="setHoverState(true)"
             (mouseleave)="setHoverState(false)"
           >

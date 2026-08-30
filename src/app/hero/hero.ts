@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ChangeDetectionStrategy, Component, HostListener, inject, signal } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 interface NavItem {
   name: string;
@@ -15,18 +15,39 @@ interface NavItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero {
+  private readonly router = inject(Router);
+  private isScrollingToAbout = false;
+
   readonly cursorX = signal(-100);
   readonly cursorY = signal(-100);
   readonly isHovered = signal(false);
   readonly showCursor = signal(false);
 
   readonly navItems: NavItem[] = [
-    { name: 'ABO', href: 'about' },
-    { name: 'PROJECTS', href: 'projects' },
+    { name: 'ABO', href: '#about' },
+    { name: 'PROJECTS', href: '#projects' },
     { name: 'SKILLS', href: 'skills' },
     { name: 'EXPERIENCE', href: 'experience' },
     { name: 'CONTACT', href: 'contact' },
   ];
+
+  handleNavClick(item: NavItem, event?: MouseEvent): void {
+    if (!item.href.startsWith('#')) {
+      return;
+    }
+
+    event?.preventDefault();
+
+    const sectionId = item.href.replace('#', '');
+    const section = document.getElementById(sectionId) as HTMLElement | null;
+
+    if (!section) {
+      return;
+    }
+
+    window.history.pushState(null, '', item.href);
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   ngAfterViewInit(): void {
     this.showCursor.set(true);
@@ -40,6 +61,45 @@ export class Hero {
 
   setHoverState(value: boolean): void {
     this.isHovered.set(value);
+  }
+
+  @HostListener('window:wheel', ['$event'])
+  onWheel(event: WheelEvent): void {
+    if (event.deltaY <= 0 || this.isScrollingToAbout) {
+      return;
+    }
+
+    const heroSection = document.querySelector('app-hero') as HTMLElement | null;
+    const aboutSection = document.getElementById('about');
+
+    if (!heroSection || !aboutSection) {
+      return;
+    }
+
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+    if (window.scrollY >= heroBottom - window.innerHeight) {
+      return;
+    }
+
+    event.preventDefault();
+    this.isScrollingToAbout = true;
+    aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    window.setTimeout(() => {
+      this.isScrollingToAbout = false;
+    }, 1200);
+  }
+
+  scrollToAbout(): void {
+    const aboutSection = document.getElementById('about');
+
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    this.router.navigateByUrl('/about');
   }
 
   get cursorLeft(): string {
