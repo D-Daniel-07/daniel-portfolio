@@ -28,6 +28,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -36,7 +41,12 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "localhost",
+                "127.0.0.1",
+                "0.0.0.0",
+                "[::1]"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -68,6 +78,16 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "host": "0.0.0.0",
+            "port": 4200,
+            "allowedHosts": [
+              "localhost",
+              "127.0.0.1",
+              "0.0.0.0",
+              "[::1]"
+            ]
+          },
           "configurations": {
             "production": {
               "buildTarget": "daniel-portfolio:build:production"

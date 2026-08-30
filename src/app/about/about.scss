@@ -1,0 +1,986 @@
+:host {
+  display: block;
+}
+
+.about-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 6rem 1.5rem;
+
+  box-sizing: border-box;
+
+  background: #000;
+
+  color: #e8dfd8;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  ::selection {
+    background: #cbb59d;
+    color: #000;
+  }
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+   ========================================================= */
+
+.background-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(160px);
+}
+
+.background-glow-one {
+  top: 25%;
+  left: 16%;
+
+  width: 32rem;
+  height: 32rem;
+
+  background: #d4af37;
+
+  opacity: 0.08;
+
+  animation: glowOne 8s ease-in-out infinite;
+}
+
+.background-glow-two {
+  right: 25%;
+  bottom: 16%;
+
+  width: 28rem;
+  height: 28rem;
+
+  background: #8c6d4f;
+
+  opacity: 0.05;
+
+  filter: blur(170px);
+
+  animation: glowTwo 10s ease-in-out infinite;
+}
+
+@keyframes glowOne {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.08;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.16;
+  }
+}
+
+@keyframes glowTwo {
+  0%,
+  100% {
+    transform: scale(1.2);
+    opacity: 0.05;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.12;
+  }
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.about-container {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  max-width: 80rem;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 2.5rem;
+
+  animation: eyebrowEnter 0.9s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+.eyebrow-text {
+  color: #d4af37;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.35em;
+
+  text-transform: uppercase;
+}
+
+.eyebrow-line {
+  width: 5rem;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(212, 175, 55, 0.8),
+    rgba(140, 109, 79, 0.4),
+    transparent
+  );
+}
+
+@keyframes eyebrowEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 3rem;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.about-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   HEADLINE
+   ========================================================= */
+
+.headline-wrapper {
+  position: relative;
+
+  margin-bottom: 1.5rem;
+
+  user-select: none;
+
+  animation: fadeUp 1.2s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.15s both;
+}
+
+.about-headline {
+  margin: 0;
+
+  font-family: 'Bebas Neue', sans-serif;
+
+  font-size: clamp(
+    3.2rem,
+    8vw,
+    5.4rem
+  );
+
+  font-weight: 400;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+}
+
+.about-headline span {
+  display: block;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+
+/* White headline */
+
+.headline-white {
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff,
+    #d5cbc0 55%,
+    #605448
+  );
+
+  filter: drop-shadow(
+    0 4px 10px rgba(0, 0, 0, 0.85)
+  );
+}
+
+
+/* Gold headline */
+
+.headline-gold {
+  background-image: linear-gradient(
+    to bottom,
+    #f7e7c4,
+    #c99e5d 55%,
+    #543b1a
+  );
+
+  filter: drop-shadow(
+    0 8px 25px rgba(201, 158, 93, 0.3)
+  );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.about-description {
+  max-width: 36rem;
+
+  margin: 0 0 2.5rem;
+
+  color: #b3a497;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 14.5px;
+  font-weight: 300;
+
+  line-height: 1.85;
+
+  letter-spacing: 0.04em;
+
+  animation: fadeUp 1.2s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.33s both;
+}
+
+.name-highlight {
+  color: #f3dbb3;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1.5rem;
+
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+
+  border-top: 1px solid
+    rgba(140, 109, 79, 0.25);
+
+  animation: fadeUp 1.2s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.51s both;
+}
+
+.stat-item {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.stat-value {
+  color: #f4ebe2;
+
+  font-family: 'Bebas Neue', sans-serif;
+
+  font-size: 2.5rem;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+}
+
+.stat-highlight {
+  color: #d4af37;
+}
+
+.stat-label {
+  margin-top: 0.125rem;
+
+  color: #a8988b;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PORTRAIT COLUMN
+   ========================================================= */
+
+.portrait-column {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1400px;
+}
+
+
+/* =========================================================
+   GOLD GLOW
+   ========================================================= */
+
+.portrait-glow {
+  position: absolute;
+
+  inset: -1.5rem;
+
+  border-radius: 1.5rem;
+
+  background: conic-gradient(
+    from 0deg,
+    #d4af37 0%,
+    #8c6d4f 30%,
+    transparent 60%,
+    #d4af37 100%
+  );
+
+  filter: blur(2rem);
+
+  opacity: 0.15;
+
+  pointer-events: none;
+
+  transition:
+    transform 3s ease,
+    opacity 3s ease;
+}
+
+.portrait-glow.glow-active {
+  transform: scale(1.15) rotate(180deg);
+
+  opacity: 0.35;
+}
+
+
+/* =========================================================
+   SPARKS
+   ========================================================= */
+
+.spark {
+  position: absolute;
+
+  z-index: 30;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation-iteration-count: infinite;
+}
+
+.spark-one {
+  top: 25%;
+  left: -1.5rem;
+
+  width: 6px;
+  height: 6px;
+
+  background: #f3dbb3;
+
+  filter: blur(1px);
+
+  box-shadow:
+    0 0 8px #d4af37;
+
+  animation: sparkOne 2s ease-out infinite;
+}
+
+.spark-two {
+  right: -1.5rem;
+  bottom: 33%;
+
+  width: 8px;
+  height: 8px;
+
+  background: #d4af37;
+
+  filter: blur(1px);
+
+  box-shadow:
+    0 0 10px #d4af37;
+
+  animation: sparkTwo 2.4s ease-out infinite;
+}
+
+@keyframes sparkOne {
+  0% {
+    opacity: 0;
+    transform: translate(-20px, 10px);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-30px, -50px);
+  }
+}
+
+@keyframes sparkTwo {
+  0% {
+    opacity: 0;
+    transform: translate(20px, 20px);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(40px, -60px);
+  }
+}
+
+
+/* =========================================================
+   MAIN PORTRAIT CARD
+   ========================================================= */
+
+.portrait-card {
+  position: relative;
+
+  z-index: 20;
+
+  width: fit-content;
+
+  padding: 0.875rem;
+
+  border: 1px solid
+    rgba(140, 109, 79, 0.4);
+
+  border-radius: 2px;
+
+  background: rgba(18, 15, 12, 0.8);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.95);
+
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+
+  transition:
+    border-color 500ms ease,
+    box-shadow 500ms ease;
+
+  will-change: transform;
+}
+
+.portrait-card:hover {
+  border-color:
+    rgba(212, 175, 55, 0.8);
+}
+
+
+/* =========================================================
+   LASER BORDER
+   ========================================================= */
+
+.laser-border {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  border-radius: 2px;
+
+  pointer-events: none;
+}
+
+.laser-sweep {
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent
+  );
+
+  transform: skewX(12deg);
+
+  opacity: 0;
+
+  transition: opacity 300ms ease;
+}
+
+.card-hovered .laser-sweep {
+  opacity: 1;
+
+  animation: laserSweep 1.8s linear infinite;
+}
+
+@keyframes laserSweep {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 200%;
+  }
+}
+
+
+/* =========================================================
+   CORNER ACCENTS
+   ========================================================= */
+
+.corner-accent {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 24px;
+  height: 24px;
+
+  border-color: #d4af37;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 0 10px rgba(212, 175, 55, 0.4);
+
+  transition:
+    transform 500ms ease;
+}
+
+
+/* Top left */
+
+.corner-top-left {
+  top: 0;
+  left: 0;
+
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.portrait-card:hover .corner-top-left {
+  transform: translate(-2px, -2px);
+}
+
+
+/* Top right */
+
+.corner-top-right {
+  top: 0;
+  right: 0;
+
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.portrait-card:hover .corner-top-right {
+  transform: translate(2px, -2px);
+}
+
+
+/* Bottom left */
+
+.corner-bottom-left {
+  bottom: 0;
+  left: 0;
+
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
+
+.portrait-card:hover .corner-bottom-left {
+  transform: translate(-2px, 2px);
+}
+
+
+/* Bottom right */
+
+.corner-bottom-right {
+  right: 0;
+  bottom: 0;
+
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.portrait-card:hover .corner-bottom-right {
+  transform: translate(2px, 2px);
+}
+
+
+/* =========================================================
+   PORTRAIT FRAME
+   ========================================================= */
+
+.portrait-frame {
+  position: relative;
+
+  width: min(
+    390px,
+    70vw
+  );
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  border-radius: 2px;
+
+  background: #000;
+}
+
+
+/* =========================================================
+   PORTRAIT IMAGE
+   ========================================================= */
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: top;
+
+  filter:
+    brightness(0.94)
+    contrast(1.06)
+    saturate(1.02);
+
+  transition:
+    filter 700ms ease;
+}
+
+.portrait-card:hover .portrait-image {
+  filter:
+    brightness(1.05)
+    contrast(1.12)
+    saturate(1.02);
+}
+
+
+/* =========================================================
+   HOLOGRAPHIC SPOTLIGHT
+   ========================================================= */
+
+.spotlight {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  mix-blend-mode: overlay;
+
+  opacity: 0;
+
+  transition: opacity 300ms ease;
+}
+
+.spotlight-active {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   FILM NOIR SHADOW
+   ========================================================= */
+
+.portrait-shadow {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   SIGNATURE
+   ========================================================= */
+
+.portrait-signature {
+  position: absolute;
+
+  right: 1rem;
+  bottom: 1rem;
+
+  z-index: 20;
+
+  user-select: none;
+}
+
+.portrait-signature span {
+  color: #f2d8a7;
+
+  font-family:
+    'Herr Von Muellerhoff',
+    'Allura',
+    cursive;
+
+  font-size: 1.875rem;
+
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 0 12px rgba(242, 216, 167, 0.5)
+    );
+
+  transition: color 300ms ease;
+}
+
+.portrait-card:hover .portrait-signature span {
+  color: #fff;
+}
+
+
+/* =========================================================
+   FADE-UP
+   ========================================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1024px) {
+  .about-section {
+    padding: 8rem 5rem;
+  }
+
+  .about-grid {
+    grid-template-columns:
+      repeat(12, minmax(0, 1fr));
+
+    gap: 4rem;
+  }
+
+  .about-content {
+    grid-column: span 7;
+  }
+
+  .portrait-column {
+    grid-column: span 5;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 640px) {
+  .about-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    gap: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 2.75rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .about-section {
+    min-height: auto;
+
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .about-headline {
+    font-size: clamp(
+      3rem,
+      12vw,
+      4.5rem
+    );
+  }
+
+  .about-description {
+    font-size: 12px;
+
+    line-height: 1.8;
+  }
+
+  .portrait-column {
+    margin-top: 1rem;
+  }
+
+  .portrait-frame {
+    width: min(
+      390px,
+      80vw
+    );
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .about-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .eyebrow-text {
+    font-size: 9px;
+
+    letter-spacing: 0.28em;
+  }
+
+  .eyebrow-line {
+    width: 3.5rem;
+  }
+
+  .about-headline {
+    font-size: 3.2rem;
+  }
+
+  .stats-grid {
+    gap: 1rem;
+  }
+
+  .stat-value {
+    font-size: 2.2rem;
+  }
+
+  .stat-label {
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+  }
+
+  .portrait-card {
+    padding: 0.65rem;
+  }
+}

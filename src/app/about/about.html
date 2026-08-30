@@ -1,0 +1,153 @@
+<section id="about" class="about-section">
+  <!-- =====================================================
+       BACKGROUND GLOWS
+       ===================================================== -->
+
+  <div class="background-glow background-glow-one"></div>
+
+  <div class="background-glow background-glow-two"></div>
+
+  <!-- =====================================================
+       MAIN CONTAINER
+       ===================================================== -->
+
+  <div class="about-container">
+    <!-- ===================================================
+         EYEBROW HEADER
+         =================================================== -->
+
+    <div class="eyebrow">
+      <span class="eyebrow-text"> 01 / ABOUT ME </span>
+
+      <div class="eyebrow-line"></div>
+    </div>
+
+    <!-- ===================================================
+         MAIN GRID
+         =================================================== -->
+
+    <div class="about-grid">
+      <!-- =================================================
+           LEFT CONTENT
+           ================================================= -->
+
+      <div class="about-content">
+        <!-- Headline -->
+
+        <div class="headline-wrapper">
+          <h2 class="about-headline">
+            <span class="headline-white"> I DON'T JUST WRITE CODE. </span>
+
+            <span class="headline-gold"> I BUILD WHAT'S NEXT. </span>
+          </h2>
+        </div>
+
+        <!-- Bio -->
+
+        <p class="about-description">
+          I'm
+          <span class="name-highlight"> Damisetti Shamya Lohitha </span>, a Full Stack Developer and
+          Data Science student specializing in building scalable web architectures, AI-integrated
+          platforms, and refined digital experiences. With a strong algorithmic foundation and a
+          focus on clean engineering, I turn complex requirements into impactful products.
+        </p>
+
+        <!-- =================================================
+             STATS
+             ================================================= -->
+
+        <div class="stats-grid">
+          @for (stat of stats; track stat.label) {
+            <div class="stat-item">
+              <span class="stat-value" [class.stat-highlight]="stat.highlight">
+                {{ stat.value }}
+              </span>
+
+              <span class="stat-label">
+                {{ stat.label }}
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- =================================================
+           RIGHT PORTRAIT
+           ================================================= -->
+
+      <div class="portrait-column">
+        <!-- Ambient Gold Glow -->
+
+        <div class="portrait-glow" [class.glow-active]="isCardHovered()"></div>
+
+        <!-- =================================================
+             HOVER PARTICLES
+             ================================================= -->
+
+        @if (isCardHovered()) {
+          <div class="spark spark-one"></div>
+
+          <div class="spark spark-two"></div>
+        }
+
+        <!-- =================================================
+             3D CARD
+             ================================================= -->
+
+        <div
+          #portraitCard
+          class="portrait-card"
+          [class.card-hovered]="isCardHovered()"
+          [style.transform]="cardTransform"
+          (mousemove)="onCardMouseMove($event, portraitCard)"
+          (mouseenter)="onCardMouseEnter()"
+          (mouseleave)="onCardMouseLeave()"
+        >
+          <!-- Laser Border -->
+
+          <div class="laser-border">
+            <div class="laser-sweep"></div>
+          </div>
+
+          <!-- =================================================
+               CORNER ACCENTS
+               ================================================= -->
+
+          <div class="corner-accent corner-top-left"></div>
+
+          <div class="corner-accent corner-top-right"></div>
+
+          <div class="corner-accent corner-bottom-left"></div>
+
+          <div class="corner-accent corner-bottom-right"></div>
+
+          <!-- =================================================
+               PORTRAIT
+               ================================================= -->
+
+          <div class="portrait-frame">
+            <img src="/assets/dani.jpeg" alt="Daniel" class="portrait-image" />
+
+            <!-- Holographic Spotlight -->
+
+            <div
+              class="spotlight"
+              [class.spotlight-active]="isCardHovered()"
+              [style.background]="spotlightBackground"
+            ></div>
+
+            <!-- Film Noir Shadow -->
+
+            <div class="portrait-shadow"></div>
+
+            <!-- Signature -->
+
+            <div class="portrait-signature">
+              <span> Daniel </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
