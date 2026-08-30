@@ -1,3 +1,13 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    loadComponent: () => import('./hero/hero').then((m) => m.HeroComponent),
+  },
+  {
+    path: 'about',
+    loadComponent: () => import('./about/about').then((m) => m.AboutComponent),
+  },
+];
