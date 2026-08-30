@@ -1,0 +1,165 @@
+<section class="hero-section">
+  <!-- ================= CUSTOM CURSOR ================= -->
+  @if (showCursor()) {
+    <div
+      class="custom-cursor"
+      [class.cursor-hovered]="isHovered()"
+      [style.left]="cursorLeft"
+      [style.top]="cursorTop"
+      [style.width]="cursorSize"
+      [style.height]="cursorSize"
+      [style.background-color]="cursorBackground"
+    ></div>
+  }
+
+  <!-- ================= FIXED VIDEO LAYER ================= -->
+  <div class="video-layer">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Seamless Soft Left Edge Blend -->
+    <div class="video-left-blend"></div>
+
+    <!-- ================= WATERMARK ================= -->
+    <div class="watermark-wrapper">
+      <div class="watermark-container">
+        <div class="watermark-glow"></div>
+
+        <div class="watermark-animation">
+          <img src="/assets/watermark.png" alt="Insignia" class="watermark-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CONTENT LAYER ================= -->
+  <div class="content-layer">
+    <!-- ================= NAVIGATION ================= -->
+    <header class="navigation">
+      <!-- Logo -->
+      <a
+        routerLink=""
+        class="logo"
+        (mouseenter)="setHoverState(true)"
+        (mouseleave)="setHoverState(false)"
+      >
+        DANIEL D
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links">
+        @for (item of navItems; track item.name) {
+          <a
+            [routerLink]="item.href"
+            class="nav-link"
+            (mouseenter)="setHoverState(true)"
+            (mouseleave)="setHoverState(false)"
+          >
+            <span>{{ item.name }}</span>
+            <span class="nav-link-line"></span>
+          </a>
+        }
+      </nav>
+
+      <!-- Let's Talk -->
+      <a
+        routerLink="contact"
+        class="talk-button"
+        (mouseenter)="setHoverState(true)"
+        (mouseleave)="setHoverState(false)"
+      >
+        <span>LET'S TALK</span>
+        <span class="talk-arrow">↗</span>
+      </a>
+    </header>
+
+    <!-- ================= MAIN HERO ================= -->
+    <div class="hero-content">
+      <!-- ================= LEFT CONTENT ================= -->
+      <div class="hero-left">
+        <!-- Headline -->
+        <div class="headline-wrapper hero-animate animation-delay-1">
+          <h1 class="headline">
+            <span class="headline-line headline-white"> I BUILD </span>
+
+            <span class="headline-line headline-gold"> DIGITAL </span>
+
+            <span class="headline-line headline-bronze"> EXPERIENCES </span>
+          </h1>
+        </div>
+
+        <!-- Technologies -->
+        <div class="technologies hero-animate animation-delay-2">
+          <p>
+            FULL STACK DEVELOPER
+            <span>•</span>
+            UI/UX DESIGNER
+            <span>•</span>
+            DATA SCIENCE
+          </p>
+        </div>
+
+        <!-- Description -->
+        <div class="description hero-animate animation-delay-3">
+          <p>
+            I turn bold ideas into seamless digital experiences.
+            <br />
+            Where frontend meets powerful backend, and code transforms vision into impact.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons hero-animate animation-delay-4">
+          <!-- Explore Work -->
+          <a
+            routerLink="work"
+            class="cta-button explore-button"
+            (mouseenter)="setHoverState(true)"
+            (mouseleave)="setHoverState(false)"
+          >
+            <span class="cta-top-line"></span>
+
+            <span>EXPLORE MY WORK</span>
+
+            <span class="cta-arrow">↗</span>
+          </a>
+
+          <!-- Resume -->
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button resume-button"
+            (mouseenter)="setHoverState(true)"
+            (mouseleave)="setHoverState(false)"
+          >
+            <span>DOWNLOAD RESUME</span>
+            <span class="resume-arrow">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ================= RIGHT QUOTE ================= -->
+      <div class="quote-card">
+        <!-- Quote -->
+        <span class="quote-mark"> “ </span>
+
+        <!-- Statement -->
+        <div class="quote-statement">
+          <p>CODE IS MY CRAFT.</p>
+          <p>IMPACT IS MY GOAL.</p>
+        </div>
+
+        <!-- Gold Line -->
+        <div class="quote-line"></div>
+
+        <!-- Signature -->
+        <div class="signature">Lohitha</div>
+      </div>
+    </div>
+
+    <!-- Bottom Spacer -->
+    <div class="bottom-spacer"></div>
+  </div>
+</section>
