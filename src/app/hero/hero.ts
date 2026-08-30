@@ -27,7 +27,7 @@ export class Hero {
     { name: 'ABO', href: '#about' },
     { name: 'PROJECTS', href: '#projects' },
     { name: 'SKILLS', href: '#skills' },
-    { name: 'EXPERIENCE', href: 'experience' },
+    { name: 'EXPERIENCE', href: '#experience' },
     { name: 'CONTACT', href: 'contact' },
   ];
 

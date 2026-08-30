@@ -1,0 +1,111 @@
+<section #experienceSection id="experience" class="experience-section">
+  <!-- ==========================================
+       BACKGROUND GLOW
+  =========================================== -->
+
+  <div class="background-glow"></div>
+
+  <div class="experience-container">
+    <!-- ==========================================
+         EYEBROW HEADER
+    =========================================== -->
+
+    <div data-animate class="eyebrow animate-eyebrow">
+      <span> 04 / EXPERIENCE </span>
+
+      <div class="eyebrow-line"></div>
+    </div>
+
+    <!-- ==========================================
+         SECTION HEADLINE
+    =========================================== -->
+
+    <div data-animate class="section-headline animate-headline">
+      <h2>
+        <span class="heading-white"> EXPERIENCE &amp; </span>
+
+        <span class="heading-gold"> MILESTONES. </span>
+      </h2>
+    </div>
+
+    <!-- ==========================================
+         ROUTE MAP / TIMELINE
+    =========================================== -->
+
+    <div #timeline class="timeline">
+      <!-- Background Track -->
+
+      <div class="background-track"></div>
+
+      <!-- Animated Gold Track -->
+
+      <div class="gold-track"></div>
+
+      <!-- ========================================
+           JOURNEY ITEMS
+      ========================================= -->
+
+      <div class="journey-list">
+        @for (stop of journey; track stop.id; let index = $index) {
+          <article
+            data-animate
+            class="journey-item animate-item"
+            [style.animation-delay]="index * 80 + 'ms'"
+          >
+            <!-- ==================================
+                 DESKTOP YEAR
+            =================================== -->
+
+            <div class="desktop-year">
+              <span>
+                {{ stop.year }}
+              </span>
+            </div>
+
+            <!-- ==================================
+                 ROUTE NODE
+            =================================== -->
+
+            <div class="route-node">
+              <div class="node-ring"></div>
+
+              <div class="node-dot"></div>
+            </div>
+
+            <!-- ==================================
+                 CONTENT
+            =================================== -->
+
+            <div class="journey-content">
+              <!-- Mobile Year -->
+
+              <div class="mobile-year">
+                <span>
+                  {{ stop.year }}
+                </span>
+              </div>
+
+              <!-- Title -->
+
+              <h3>
+                {{ stop.title }}
+              </h3>
+
+              <!-- Organization -->
+
+              <span class="organization">
+                {{ stop.organization }}
+              </span>
+
+              <!-- Description -->
+
+              <p>
+                {{ stop.description }}
+              </p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
