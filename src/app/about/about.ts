@@ -24,21 +24,21 @@ export class About {
 
   readonly stats: Stat[] = [
     {
-      value: '1200+',
-      label: 'DSA Solved',
+      value: '2+',
+      label: 'Years of Experience',
     },
     {
-      value: '9.07',
-      label: 'B.Tech CGPA',
+      value: 'Angular',
+      label: 'Proficiency',
       highlight: true,
     },
     {
-      value: '40+',
-      label: 'Industry-Grade Projects',
+      value: '500+',
+      label: 'DSA Problems Solved',
     },
     {
-      value: 'Top 100',
-      label: 'Myntra Hackerramp',
+      value: '8.03',
+      label: 'CGPA',
       highlight: true,
     },
   ];

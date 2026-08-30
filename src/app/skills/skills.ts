@@ -36,42 +36,48 @@ export class Skills implements AfterViewInit, OnDestroy {
 
   readonly bentoCategories: SkillCategory[] = [
     {
-      title: 'FRONTEND ARCHITECTURE',
+      title: 'ANGULAR ARCHITECTURE',
       badge: 'CORE PILLAR',
-      items: ['React.js', 'React Native', 'Tailwind CSS', 'Electron.js'],
+      items: ['Angular', 'TypeScript', 'Angular CLI', 'Angular Material', 'SCSS'],
       description:
-        'Specialized in building high-performance client applications, custom component libraries, and immersive desktop/mobile interfaces.',
-      stat: '100% RESPONSIVE',
+        'Building scalable enterprise applications with reusable Angular components, maintainable architecture, and modern frontend engineering practices.',
+      stat: '2+ YEARS',
       colSpan: 'span-7',
     },
 
     {
-      title: 'DISTRIBUTED BACKEND',
-      badge: 'HIGH CONCURRENCY',
-      items: ['Node.js', 'Express.js', 'Spring Boot', 'Docker', 'Redis'],
+      title: 'STATE & DATA FLOW',
+      badge: 'APPLICATION CORE',
+      items: ['NgRx', 'RxJS', 'Signal Store', 'REST APIs', 'Dataflow'],
       description:
-        'Engineered RESTful APIs, JWT role-based access control, caching layers, and multi-tenant SaaS backend isolation.',
-      stat: '< 40ms LATENCY',
+        'Designing efficient application data flows and state management solutions while integrating REST APIs for reliable and maintainable user experiences.',
+      stat: '20% DATA EFFICIENCY',
       colSpan: 'span-5',
     },
 
     {
-      title: 'DATA PLATFORMS',
-      badge: 'PERSISTENCE',
-      items: ['MongoDB Atlas', 'PostgreSQL', 'MySQL'],
+      title: 'PERFORMANCE ENGINEERING',
+      badge: 'OPTIMIZATION',
+      items: [
+        'Lazy Loading',
+        'Change Detection',
+        'Reusable Components',
+        'Performance',
+        'Responsive UI',
+      ],
       description:
-        'Designing resilient relational and document schemas with optimized indexing and transaction isolation.',
-      stat: 'ACID & NOSQL',
+        'Focused on improving application responsiveness through optimized component design, lazy loading, efficient data handling, and modern Angular techniques.',
+      stat: '15% LOAD TIME',
       colSpan: 'span-5',
     },
 
     {
-      title: 'ALGORITHMS & MACHINE LEARNING',
-      badge: 'INTELLIGENCE',
-      items: ['C++', 'Python', 'Java', 'scikit-learn', 'OpenAI API'],
+      title: 'QUALITY & DELIVERY',
+      badge: 'ENGINEERING',
+      items: ['Jest', 'Cypress', 'Unit Testing', 'Git', 'GitLab', 'JIRA'],
       description:
-        '1200+ algorithm problems solved. Applied Random Forest classifiers for real-time risk heatmaps and NLP policy analyzers.',
-      stat: '1200+ SOLVED',
+        'Delivering reliable frontend solutions through structured testing, version control, collaborative development, and proactive debugging across enterprise applications.',
+      stat: 'PRODUCTION READY',
       colSpan: 'span-7',
     },
   ];

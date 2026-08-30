@@ -29,142 +29,77 @@ export class Projects {
   readonly projects: Project[] = [
     {
       number: '01',
-      title: 'PolicyGuard AI',
-      category: 'AI / LEGAL-TECH PLATFORM',
+      title: 'STANDARD BANK',
+      category: 'ENTERPRISE BANKING',
 
       description:
-        'AI-powered platform engineered for automated privacy policy analysis and legal contract auditing across web, desktop, and mobile. Implements NLP extraction, real-time risk alert detection, and generative risk score intelligence.',
+        'Enterprise banking applications developed and enhanced across multiple countries. Built and maintained lending, registration, query management, and CIF modification workflows while delivering reusable Angular components, efficient state management, and high-performance user experiences.',
 
       githubUrl: 'https://github.com/lohithadamisetti123',
 
       tech: [
-        'React.js',
-        'React Native',
-        'Electron.js',
-        'Node.js',
-        'Express.js',
-        'MongoDB Atlas',
-        'OpenAI API',
-        'Prompt Eng',
-        'NLP',
-        'Docker',
-        'JWT',
+        'ANGULAR',
+        'TYPESCRIPT',
+        'NGRX',
+        'RXJS',
+        'REACTIVE FORMS',
+        'CHANGE DETECTION',
+        'REST APIs',
+        'SCSS',
+        'JEST',
+        'CYPRESS',
       ],
 
       metrics: [
         {
-          label: 'PLATFORMS',
-          value: 'Web, Mobile, Desktop',
+          label: 'DOMAIN',
+          value: 'Enterprise Banking',
         },
         {
-          label: 'ENGINE',
-          value: 'OpenAI NLP / GPT',
+          label: 'ARCHITECTURE',
+          value: 'Reusable Components',
         },
         {
-          label: 'PIPELINE',
-          value: 'Automated Scoring',
+          label: 'EFFICIENCY',
+          value: '40% Faster Development',
         },
       ],
     },
 
     {
       number: '02',
-      title: 'Software Release Risk Heatmap',
-      category: 'MACHINE LEARNING / DEV PLATFORM',
+      title: 'E-STORE APPLICATION',
+      category: 'E-COMMERCE / FRONTEND',
 
       description:
-        'Full-stack predictive release management platform utilizing Machine Learning. Implements a trained Random Forest classifier to categorize release stability from Low to Critical risk, rendered over a live interactive team heatmap.',
+        'A scalable responsive e-commerce web application focused on modern UI/UX and maintainable frontend architecture. Implemented Signal Store for application-wide state management and developed reusable components to improve development efficiency and scalability.',
 
       githubUrl: 'https://github.com/lohithadamisetti123',
 
       tech: [
-        'React.js',
-        'TypeScript',
-        'Python',
-        'FastAPI',
-        'scikit-learn',
-        'PostgreSQL',
-        'Tailwind CSS',
-        'REST APIs',
-        'JWT',
+        'ANGULAR',
+        'TYPESCRIPT',
+        'SIGNAL STORE',
+        'JAVASCRIPT',
+        'HTML',
+        'CSS',
+        'SCSS',
+        'RESPONSIVE UI',
+        'REUSABLE COMPONENTS',
       ],
 
       metrics: [
         {
-          label: 'MODEL',
-          value: 'Random Forest',
+          label: 'FOCUS',
+          value: 'Responsive UI/UX',
         },
         {
-          label: 'ACCURACY',
-          value: 'High Precision',
+          label: 'STATE',
+          value: 'Signal Store',
         },
-        {
-          label: 'DASHBOARD',
-          value: 'Live Risk Heatmap',
-        },
-      ],
-    },
-
-    {
-      number: '03',
-      title: 'Multi-Tenant SaaS Platform',
-      category: 'CLOUD / DISTRIBUTED SYSTEM',
-
-      description:
-        'Enterprise-grade multi-tenant platform built for unified management of teams, projects, and execution lifecycles. Architected with strict tenant data isolation, granular Role-Based Access Control (RBAC), and containerized deployments.',
-
-      githubUrl: 'https://github.com/lohithadamisetti123',
-
-      tech: ['Node.js', 'Express.js', 'PostgreSQL', 'React', 'Docker', 'JWT', 'RBAC', 'REST APIs'],
-
-      metrics: [
         {
           label: 'ARCHITECTURE',
-          value: 'Multi-Tenant',
-        },
-        {
-          label: 'SECURITY',
-          value: 'RBAC Isolation',
-        },
-        {
-          label: 'CONTAINERS',
-          value: 'Docker Compose',
-        },
-      ],
-    },
-
-    {
-      number: '04',
-      title: 'Payment Gateway with Hosted Checkout',
-      category: 'FINTECH / PAYMENT SYSTEMS',
-
-      description:
-        'End-to-end hosted payment gateway infrastructure supporting seamless merchant order generation, multi-currency processing, and secure consumer checkout via UPI and Cards with webhook transaction verification.',
-
-      githubUrl: 'https://github.com/lohithadamisetti123',
-
-      tech: [
-        'Node.js',
-        'Spring Boot',
-        'PostgreSQL',
-        'React',
-        'Docker',
-        'REST APIs',
-        'UPI / Card Integrations',
-      ],
-
-      metrics: [
-        {
-          label: 'PROTOCOLS',
-          value: 'UPI & Cards',
-        },
-        {
-          label: 'BACKEND',
-          value: 'Spring Boot + Node',
-        },
-        {
-          label: 'DATABASE',
-          value: 'ACID PostgreSQL',
+          value: 'Reusable Components',
         },
       ],
     },
