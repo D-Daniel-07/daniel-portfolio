@@ -11,8 +11,8 @@ import { RouterLink } from '@angular/router';
         <p class="eyebrow">About</p>
         <h2>Designer, developer, problem-solver.</h2>
         <p>
-          I’m a frontend engineer focused on creating polished, user-centered experiences.
-          I enjoy turning complex ideas into clear, accessible interfaces that feel effortless.
+          I’m a frontend engineer focused on creating polished, user-centered experiences. I enjoy
+          turning complex ideas into clear, accessible interfaces that feel effortless.
         </p>
         <button type="button" class="back-button" routerLink="/">Back home</button>
       </div>
