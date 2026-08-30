@@ -1,0 +1,145 @@
+<footer #contactSection id="contact" class="contact-section">
+  <div class="contact-container">
+    <!-- ==========================================
+         SPLIT GRID
+    =========================================== -->
+
+    <div class="contact-grid">
+      <!-- ========================================
+           LEFT COLUMN
+      ========================================= -->
+
+      <div class="left-column">
+        <div>
+          <!-- Eyebrow Header -->
+
+          <div data-animate class="eyebrow animate-eyebrow">
+            <span> 05 / CONTACT </span>
+
+            <div class="eyebrow-line"></div>
+          </div>
+
+          <!-- Headline -->
+
+          <div data-animate class="headline animate-headline">
+            <h2>
+              <span class="heading-white"> INITIALIZE </span>
+
+              <span class="heading-gold"> TRANSMISSION. </span>
+            </h2>
+          </div>
+
+          <!-- Description -->
+
+          <p data-animate class="contact-description animate-description">
+            Have an ambitious system to architect, an engineering opportunity, or a collaborative
+            inquiry? Send a direct dispatch below.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================
+           RIGHT COLUMN / FORM
+      ========================================= -->
+
+      <div data-animate class="form-wrapper animate-form">
+        <!-- Top Gold Horizon Edge -->
+
+        <div class="gold-horizon"></div>
+
+        <!-- Precision Corner Crosshairs -->
+
+        <div class="corner top-left"></div>
+
+        <div class="corner top-right"></div>
+
+        <div class="corner bottom-left"></div>
+
+        <div class="corner bottom-right"></div>
+
+        <!-- ======================================
+             SUCCESS STATE
+        ======================================= -->
+
+        @if (sent()) {
+          <div class="success-state">
+            <div class="success-icon">✓</div>
+
+            <h3>PACKET DELIVERED</h3>
+
+            <p>Transmission registered successfully.</p>
+          </div>
+        } @else {
+          <!-- ====================================
+               CONTACT FORM
+          ===================================== -->
+
+          <form class="contact-form" (submit)="handleSubmit($event)">
+            <!-- Name + Email -->
+
+            <div class="input-grid">
+              <!-- Sender -->
+
+              <div class="field">
+                <span class="field-label"> // SENDER </span>
+
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  [value]="formData().name"
+                  (input)="updateName($any($event.target).value)"
+                  placeholder="Enter name"
+                />
+              </div>
+
+              <!-- Channel -->
+
+              <div class="field">
+                <span class="field-label"> // CHANNEL </span>
+
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  [value]="formData().email"
+                  (input)="updateEmail($any($event.target).value)"
+                  placeholder="Enter email"
+                />
+              </div>
+            </div>
+
+            <!-- Message -->
+
+            <div class="field">
+              <span class="field-label"> // PAYLOAD </span>
+
+              <textarea
+                name="message"
+                required
+                rows="4"
+                [value]="formData().message"
+                (input)="updateMessage($any($event.target).value)"
+                placeholder="Enter transmission payload..."
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+
+            <button type="submit" class="submit-button">EXECUTE DISPATCH ↗</button>
+          </form>
+        }
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SYSTEM FOOTER LINE
+    =========================================== -->
+
+    <div class="system-footer">
+      <span class="edition"> PORTFOLIO // EDITION 2026 </span>
+
+      <span> © {{ currentYear }} • ENGINEERED WITH PRECISION </span>
+    </div>
+  </div>
+</footer>
