@@ -35,7 +35,7 @@ export class Projects {
       description:
         'Enterprise banking applications developed and enhanced across multiple countries. Built and maintained lending, registration, query management, and CIF modification workflows while delivering reusable Angular components, efficient state management, and high-performance user experiences.',
 
-      githubUrl: 'https://github.com/lohithadamisetti123',
+      githubUrl: 'https://github.com/D-Daniel-07',
 
       tech: [
         'ANGULAR',
@@ -74,7 +74,7 @@ export class Projects {
       description:
         'A scalable responsive e-commerce web application focused on modern UI/UX and maintainable frontend architecture. Implemented Signal Store for application-wide state management and developed reusable components to improve development efficiency and scalability.',
 
-      githubUrl: 'https://github.com/lohithadamisetti123',
+      githubUrl: 'https://github.com/D-Daniel-07',
 
       tech: [
         'ANGULAR',
